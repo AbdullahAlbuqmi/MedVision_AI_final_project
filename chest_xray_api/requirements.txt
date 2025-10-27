@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+joblib
+opencv-python
+numpy
+scikit-image
+pillow
+scikit-learn
+python-multipart
