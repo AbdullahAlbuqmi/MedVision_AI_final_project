@@ -34,9 +34,9 @@ A modular AI platform for **medical image analysis** (X-ray, MRI, CT, skin, eye)
 
 Our solution addresses the limitations of existing drug information platforms by providing an **integrated AI-powered medical assistant** combining:
 
-- **Multilingual reasoning**
+- **Multilingual AI reasoning**
 - **Visual analytics**
-- **Biometric monitoring**
+- **Advanced Medical Imaging Analysis**
 
 Unlike traditional systems that offer static text results, this platform is **modular and scalable**, allowing each component to evolve independently and new healthcare features to be added over time.
 
