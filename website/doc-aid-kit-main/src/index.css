@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 180 100% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 180 100% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 100% 10%;
+    
+    /* Medical green #009688 → HSL: 174, 100%, 29% */
+    --primary: 174 100% 29%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Light blue #E7F3FF → HSL: 207, 100%, 95% */
+    --secondary: 207 100% 95%;
+    --secondary-foreground: 174 100% 29%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 207 100% 95%;
+    --accent-foreground: 174 100% 29%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 174 100% 29%;
+    
+    --radius: 0.75rem;
+    
+    /* Medical theme additions */
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --info: 207 90% 54%;
+  }
+  
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 174 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 207 50% 25%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217 33% 20%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 207 50% 25%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 174 100% 45%;
+    
+    --success: 142 71% 40%;
+    --warning: 38 92% 45%;
+    --info: 207 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-200;
+  }
+  
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+  
+  html[dir="ltr"] {
+    direction: ltr;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -66,7 +66,7 @@ Unlike traditional systems that offer static text results, this platform is **mo
 
 #### Kidney Stone CT Detection
 - **Architecture**: DenseNet121 with Fine-Tuning  
-- **Dataset**: Kidney Stone CT Dataset (~12,000 images, Kaggle)  
+- **Dataset**: Kidney Stone CT Dataset (~4200 images, Kaggle)  
 - **Performance**: 98.36% accuracy  
 - **Application**: Kidney stone detection  
 
