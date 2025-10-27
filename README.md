@@ -1,0 +1,162 @@
+# Modular AI Medical Platform
+
+**Final Project for Tuwaiq Academy data science and machine learning Bootcamp**  
+
+A modular AI platform for **medical image analysis** (X-ray, MRI, CT, skin, eye), **drug interaction checks**, and a **bilingual Fine-tuned chatbot** (Arabic/English). Built with **FastAPI orchestration**, **PostgreSQL**, and integrations on **Render** & **Hugging Face**.
+
+---
+
+## Team Members
+
+- **Abdullah Fhad Albuqmi**  
+  Email: Albuqami49@outlook.com  
+  Phone: +966556646950
+
+- **Khalid Mohammed Alshuraim**  
+  Email: Khalidm.alshuraim@gmail.com  
+  Phone: +966568450774
+
+- **Reem Abdullah Alsaif**  
+  Email: alsaiff.reem@gmail.com  
+  Phone: +966556000324
+
+- **Khalid Ahmed Khubrani**  
+  Email: khalid.a.khubrani@gmail.com  
+  Phone: +966557219174
+
+- **Razan Mohammed Albishri**  
+  Email: Razan_m99@hotmail.com  
+  Phone: +966545099471
+
+---
+
+## Introduction
+
+Our solution addresses the limitations of existing drug information platforms by providing an **integrated AI-powered medical assistant** combining:
+
+- **Multilingual reasoning**
+- **Visual analytics**
+- **Biometric monitoring**
+
+Unlike traditional systems that offer static text results, this platform is **modular and scalable**, allowing each component to evolve independently and new healthcare features to be added over time.
+
+---
+
+## Core Technological Innovations
+
+### Dual AI Clinical Chatbot System
+- **DeepSeek 3.2v-685B**: Native Arabic & English understanding for complex clinical reasoning  
+- **Fine-tuned TinyLLaMa-1B**: Optimized for rapid responses in English, with Arabic translation via Deep-Translator  
+- **Unified Safety Framework**: Guardrails instructions to prevent hallucinations and ensure medically appropriate responses  
+- **Context-Aware Dialog**: Maintains conversation context for follow-up questions and clinical scenarios  
+
+### Advanced Medical Imaging Analysis – Multi-Modal
+#### Chest X-ray Pathology Detection
+- **Architecture**: HOG feature extraction + SVM classification  
+- **Stack**: OpenCV for image processing  
+- **Dataset**: Comprehensive pulmonary imaging collection  
+- **Performance**: 96.29% accuracy  
+- **Application**: Detects pneumonia, tuberculosis, and thoracic conditions  
+
+#### Brain Tumor MRI Detection
+- **Architecture**: DenseNet121 with Transfer Learning  
+- **Dataset**: Brain Tumor MRI Dataset (~7,000 images, Kaggle)  
+- **Performance**: 93.36% accuracy  
+- **Application**: Automated brain tumor classification  
+
+#### Kidney Stone CT Detection
+- **Architecture**: DenseNet121 with Fine-Tuning  
+- **Dataset**: Kidney Stone CT Dataset (~12,000 images, Kaggle)  
+- **Performance**: 98.36% accuracy  
+- **Application**: Kidney stone detection  
+
+#### Skin Disease Classification
+- **Architecture**: Specialized neural networks  
+- **Dataset**: Skin dataset (~750 images, Roboflow)  
+- **Application**: Diagnose skin diseases from images  
+
+#### Eye Disease Classification
+- **Architecture**: Advanced computer vision models  
+- **Dataset**: Eye-disease-classification (~1,200 images, Roboflow)  
+- **Application**: Analyze eye images for disease diagnosis  
+
+### Advanced Drug Conflict Detection & Visualization
+- **Interaction Engine**: Retrieves and analyzes data from DrugBank  
+- **Comparative Analysis**: Side-by-side drug compatibility matrices  
+
+### Comprehensive Drug Documentation System
+- **Structured Access**: Instant retrieval of medication details (indications, contraindications, side effects, classifications)  
+- **Quick Reference**: Optimized for clinical environments  
+- **Dataset**: DrugBank  
+
+---
+
+## Repository Structure
+
+- `Brain_MRI/` – Brain tumor MRI detection models and scripts  
+- `Eye_disease/` – Eye disease classification models  
+- `LLM_chatbots/` – Fine-tuned bilingual chatbot implementation  
+- `chest_xray_api/` – Chest X-ray detection API  
+- `drug_description_fastapi/` – Drug interaction & description API  
+- `final project EDA/` – Exploratory Data Analysis notebooks  
+- `report/` – Project report and documentation  
+- `skin_api/` – Skin disease classification API  
+- `website/` – Web interface files (to be uploaded)  
+
+---
+
+## Installation & Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/medical-ai-platform.git
+cd medical-ai-platform
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start the API server:
+
+```bash
+uvicorn app:app --reload
+```
+Usage
+```
+Medical Imaging APIs: Send image files via FastAPI endpoints for diagnosis
+
+Drug Interaction Checks: Query medications and get compatibility reports
+
+Bilingual Chatbot: Ask clinical questions in Arabic or English for reasoning and guidance
+
+Web Interface: Provides a unified access point for all modules
+```
+Technologies Used
+```
+Programming Languages: Python 3.11+
+
+Frameworks: FastAPI, Pydantic, SQLAlchemy
+
+Databases: PostgreSQL
+
+AI/ML Libraries: Transformers, OpenCV, PyTorch, TensorFlow, Scikit-Learn
+
+Deployment: Render, Hugging Face
+
+Data Sources: Kaggle, Roboflow, DrugBank
+```
+License
+```
+This project is licensed under the MIT License – see the LICENSE file for details.
