@@ -139,6 +139,8 @@ Deployment: Render, Hugging Face
 Data Sources: Kaggle, Roboflow, DrugBank, Huggingface
 ```
 Project Poster:
+
+
 ![WhatsApp Image 2025-10-29 at 14 47 24_7f946a70](https://github.com/user-attachments/assets/29ee162f-ca72-4689-8b07-2627213545c1)
 
 License
