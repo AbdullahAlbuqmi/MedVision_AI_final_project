@@ -1,4 +1,4 @@
-# Modular AI Medical Platform
+# MedVision AI - Modular AI Medical Platform
 
 **Final Project for Tuwaiq Academy data science and machine learning Bootcamp**  
 
