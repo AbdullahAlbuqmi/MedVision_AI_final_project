@@ -11,22 +11,27 @@ A modular AI platform for **medical image analysis** (X-ray, MRI, CT, skin, eye)
 - **Abdullah Fhad Albuqmi**  
   Email: Albuqami49@outlook.com  
   Phone: +966556646950
+  LinkedIn: https://www.linkedin.com/in/abdullah-albuqmi/
 
 - **Khalid Mohammed Alshuraim**  
   Email: Khalidm.alshuraim@gmail.com  
   Phone: +966568450774
+  LinkedIn: https://www.linkedin.com/in/khalid-alshuraim/
 
 - **Reem Abdullah Alsaif**  
   Email: alsaiff.reem@gmail.com  
   Phone: +966556000324
+  LinkedIn: https://www.linkedin.com/in/reem-alsaif-0013b7305/
 
 - **Khalid Ahmed Khubrani**  
   Email: khalid.a.khubrani@gmail.com  
   Phone: +966557219174
+  LinkedIn: https://www.linkedin.com/in/khalid-khubrani-66900131a/
 
 - **Razan Mohammed Albishri**  
   Email: Razan_m99@hotmail.com  
   Phone: +966545099471
+  LinkedIn: https://www.linkedin.com/in/razan-albishri-7b59a922b/
 
 ---
 
@@ -133,6 +138,10 @@ Deployment: Render, Hugging Face
 
 Data Sources: Kaggle, Roboflow, DrugBank, Huggingface
 ```
+Project Poster:
+![WhatsApp Image 2025-10-29 at 14 47 24_7f946a70](https://github.com/user-attachments/assets/29ee162f-ca72-4689-8b07-2627213545c1)
+
 License
 ```
 This project is licensed under the MIT License – see the LICENSE file for details.
+```
