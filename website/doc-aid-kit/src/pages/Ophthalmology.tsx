@@ -192,31 +192,6 @@ function OphthalmologyContent() {
                         </div>
                       </div>
 
-                      <div>
-                        <p className="mb-2 text-sm font-medium text-muted-foreground">
-                          {language === 'ar' ? 'مستوى الثقة' : 'Confidence Level'}
-                        </p>
-                        <p className="text-xl font-semibold">{result.confidence}</p>
-                      </div>
-
-                      {result.all_predictions && (
-                        <div>
-                          <p className="mb-3 text-sm font-medium text-muted-foreground">
-                            {language === 'ar' ? 'جميع التوقعات' : 'All Predictions'}
-                          </p>
-                          <div className="space-y-2">
-                            {Object.entries(result.all_predictions).map(([label, conf]) => (
-                              <div key={label} className="flex items-center justify-between rounded-lg bg-muted/50 p-3">
-                                <span className="text-sm font-medium">
-                                  {label.replace('_', ' ')}
-                                </span>
-                                <span className="text-sm font-semibold">{conf}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
                       <Alert>
                         <AlertCircle className="h-4 w-4" />
                         <AlertDescription className="text-xs">

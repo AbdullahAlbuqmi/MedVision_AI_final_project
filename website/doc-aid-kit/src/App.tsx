@@ -10,7 +10,6 @@ import Doctor from "./pages/Doctor";
 import Admin from "./pages/Admin";
 import Profile from "./pages/Profile";
 import HealthAssistant from "./pages/HealthAssistant";
-import AdvancedClinicalChat from "./pages/AdvancedClinicalChat";
 import Dermatology from "./pages/Dermatology";
 import DrugInteractions from "./pages/DrugInteractions";
 import DrugDescription from "./pages/DrugDescription";
@@ -18,6 +17,7 @@ import ChestXray from "./pages/ChestXray";
 import KidneyAnalysis from "./pages/KidneyAnalysis";
 import Ophthalmology from "./pages/Ophthalmology";
 import BrainAnalysis from "./pages/BrainAnalysis";
+import ClinicalChatRedirect from "./components/ClinicalChatRedirect";
 import NotFound from "./pages/NotFound";
 import { initializeAuth } from "./lib/auth";
 import { initTheme } from "./lib/theme";
@@ -51,7 +51,8 @@ const App = () => {
             <Route path="/admin" element={<Admin />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/health-assistant" element={<HealthAssistant />} />
-            <Route path="/advanced-clinical-chat" element={<AdvancedClinicalChat />} />
+            <Route path="/clinical-chat" element={<ClinicalChatRedirect />} />
+            <Route path="/advanced-clinical-chat" element={<ClinicalChatRedirect />} />
             <Route path="/dermatology" element={<Dermatology />} />
             <Route path="/drug-interactions" element={<DrugInteractions />} />
             <Route path="/drug-description" element={<DrugDescription />} />

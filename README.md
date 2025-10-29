@@ -58,17 +58,16 @@ Unlike traditional systems that offer static text results, this platform is **mo
 - **Performance**: 96.29% accuracy  
 - **Application**: Detects pneumonia, tuberculosis, and thoracic conditions  
 
-#### Brain Tumor MRI Detection
-- **Architecture**: DenseNet121 with Transfer Learning  
-- **Dataset**: Brain Tumor MRI Dataset (~7,000 images, Kaggle)  
-- **Performance**: 93.36% accuracy  
-- **Application**: Automated brain tumor classification  
-
 #### Kidney Stone CT Detection
 - **Architecture**: DenseNet121 with Fine-Tuning  
 - **Dataset**: Kidney Stone CT Dataset (~4200 images, Kaggle)  
 - **Performance**: 98.36% accuracy  
-- **Application**: Kidney stone detection  
+- **Application**: Kidney stone detection 
+
+#### Brain Tumor MRI Detection
+- **Architecture**: DenseNet121 with Transfer Learning  
+- **Dataset**: Brain Tumor MRI Dataset (~7,000 images, Kaggle)   
+- **Application**: Automated brain tumor classification   
 
 #### Skin Disease Classification
 - **Architecture**: Specialized neural networks  
@@ -101,38 +100,15 @@ Unlike traditional systems that offer static text results, this platform is **mo
 - `final project EDA/` – Exploratory Data Analysis notebooks  
 - `report/` – Project report and documentation  
 - `skin_api/` – Skin disease classification API  
-- `website/` – Web interface files (to be uploaded)  
+- `website/` – Web interface files  
 
 ---
 
 ## Installation & Setup
 
-1. Clone the repository:
+Navigate to -> website (file) -> README.md for Installation details.
 
-```bash
-git clone https://github.com/yourusername/medical-ai-platform.git
-cd medical-ai-platform
-```
 
-Create a virtual environment:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Start the API server:
-
-```bash
-uvicorn app:app --reload
-```
 Usage
 ```
 Medical Imaging APIs: Send image files via FastAPI endpoints for diagnosis
@@ -155,7 +131,7 @@ AI/ML Libraries: Transformers, OpenCV, PyTorch, TensorFlow, Scikit-Learn
 
 Deployment: Render, Hugging Face
 
-Data Sources: Kaggle, Roboflow, DrugBank
+Data Sources: Kaggle, Roboflow, DrugBank, Huggingface
 ```
 License
 ```

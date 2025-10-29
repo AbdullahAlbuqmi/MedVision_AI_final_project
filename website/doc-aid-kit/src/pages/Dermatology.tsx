@@ -14,8 +14,7 @@ const API_URL = 'https://skin-sp3o.onrender.com/predict';
 
 interface PredictionResult {
   prediction: string;
-  confidence: string;
-  all_predictions: Record<string, string>;
+  reason?: string;
 }
 
 function DermatologyContent() {
@@ -177,33 +176,14 @@ function DermatologyContent() {
                         </CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
-                        <div className="flex items-center justify-between p-4 bg-background rounded-lg border-2 border-primary">
-                          <div>
-                            <p className="text-sm text-muted-foreground mb-1">
-                              {language === 'ar' ? 'التشخيص الأكثر احتمالاً' : 'Most Likely Diagnosis'}
-                            </p>
-                            <p className="text-xl font-bold">{result.prediction}</p>
-                          </div>
-                          <div className="text-right">
-                            <p className="text-sm text-muted-foreground mb-1">
-                              {language === 'ar' ? 'مستوى الثقة' : 'Confidence'}
-                            </p>
-                            <p className="text-2xl font-bold text-primary">{result.confidence}</p>
-                          </div>
-                        </div>
-
-                        <div>
-                          <p className="font-medium mb-3">
-                            {language === 'ar' ? 'جميع الاحتمالات' : 'All Predictions'}
+                        <div className="p-6 bg-background rounded-lg border-2 border-primary text-center">
+                          <p className="text-sm text-muted-foreground mb-2">
+                            {language === 'ar' ? 'التشخيص' : 'Diagnosis'}
                           </p>
-                          <div className="space-y-2">
-                            {Object.entries(result.all_predictions).map(([condition, confidence]) => (
-                              <div key={condition} className="flex items-center justify-between p-3 bg-background rounded-lg border">
-                                <span className="font-medium">{condition}</span>
-                                <span className="text-muted-foreground">{confidence}</span>
-                              </div>
-                            ))}
-                          </div>
+                          <p className="text-3xl font-bold text-primary">{result.prediction}</p>
+                          {result.reason && (
+                            <p className="text-sm text-muted-foreground mt-2">{result.reason}</p>
+                          )}
                         </div>
 
                         <Alert>

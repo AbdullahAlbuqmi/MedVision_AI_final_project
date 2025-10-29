@@ -3,6 +3,7 @@ import { Search, Loader2, Pill, AlertCircle } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { BackLink } from '@/components/BackLink';
+import { getSession } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,6 +12,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { getLanguage } from '@/lib/i18n';
+import { translateObject } from '@/lib/translator';
 
 const API_URL = 'https://drugs-description-api.onrender.com/search';
 
@@ -73,6 +75,15 @@ export default function DrugDescription() {
       if (!response.ok) throw new Error('Search failed');
       
       const data: SearchResponse = await response.json();
+      
+      // Translate results if language is Arabic and results are in English
+      if (data.results && data.results.length > 0) {
+        const translatedResults = await Promise.all(
+          data.results.map(result => translateObject(result))
+        );
+        data.results = translatedResults;
+      }
+      
       setSearchResponse(data);
       
       if (data.count > 0) {
@@ -100,13 +111,19 @@ export default function DrugDescription() {
     setFilters(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
+  const session = getSession();
+  const isLoggedIn = session !== null && session.role === 'doctor';
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       
       <main className="flex-1">
         <div className="container px-4 py-8">
-          <BackLink />
+          <BackLink 
+            to={isLoggedIn ? '/doctor' : '/'}
+            labelKey={isLoggedIn ? 'backDashboard' : 'backHome'}
+          />
 
           <div className="max-w-4xl mx-auto space-y-6">
             <Card>

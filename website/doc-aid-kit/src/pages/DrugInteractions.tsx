@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { BackLink } from '@/components/BackLink';
+import { getSession } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,6 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { getLanguage } from '@/lib/i18n';
+import { translateObject } from '@/lib/translator';
 
 const drugNameSchema = z.string()
   .trim()
@@ -73,7 +75,7 @@ export default function DrugInteractions() {
       
       // Extract drug names and interaction type from API response
       const rawInteractions = res.data.interactions || [];
-      const interactions = rawInteractions
+      let interactions = rawInteractions
         .map((item: any) => ({
           drug1_name: item.drug1_name,
           drug2_name: item.drug2_name,
@@ -84,6 +86,13 @@ export default function DrugInteractions() {
         .filter((item: SearchResult) => 
           item.drug1_name && item.drug2_name && item.interaction_type
         );
+      
+      // Translate results if language is Arabic and results are in English
+      if (interactions.length > 0) {
+        interactions = await Promise.all(
+          interactions.map(item => translateObject(item))
+        );
+      }
       
       setSearchResults(interactions);
       
@@ -142,7 +151,7 @@ export default function DrugInteractions() {
       if (interactionData && interactionData.drug1_name && 
           interactionData.drug2_name && interactionData.interaction_type) {
         // Extract drug names and interaction type from API response
-        setInteraction({
+        let interactionResult = {
           drug1_name: interactionData.drug1_name,
           drug2_name: interactionData.drug2_name,
           interaction_type: interactionData.interaction_type,
@@ -150,7 +159,12 @@ export default function DrugInteractions() {
           drug2_brand: interactionData.drug2_brand,
           drug1_scientific: interactionData.drug1_scientific,
           drug2_scientific: interactionData.drug2_scientific
-        });
+        };
+        
+        // Translate result if language is Arabic and result is in English
+        interactionResult = await translateObject(interactionResult);
+        
+        setInteraction(interactionResult);
         
         toast({
           title: language === 'ar' ? 'تم الفحص' : 'Check Complete',
@@ -171,13 +185,19 @@ export default function DrugInteractions() {
     }
   };
 
+  const session = getSession();
+  const isLoggedIn = session !== null && session.role === 'doctor';
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       
       <main className="flex-1">
         <div className="container px-4 py-8">
-          <BackLink />
+          <BackLink 
+            to={isLoggedIn ? '/doctor' : '/'}
+            labelKey={isLoggedIn ? 'backDashboard' : 'backHome'}
+          />
 
           <div className="max-w-4xl mx-auto">
             <Card>

@@ -32,8 +32,6 @@ export const translations = {
     chestXrayDesc: 'AI-powered pneumonia detection from chest X-rays',
     kidneyAnalysis: 'Kidney CT Analysis',
     kidneyAnalysisDesc: 'AI-powered kidney stone detection from CT scans',
-    clinicalChat: 'Advanced Clinical Chat',
-    clinicalChatDesc: 'Specialized medical consultation',
     dermatology: 'Dermatology AI Analysis',
     dermatologyDesc: 'Skin condition analysis',
     ophthalmology: 'Ophthalmology AI Analysis',
@@ -97,6 +95,7 @@ export const translations = {
     
     // Navigation
     backDashboard: 'Back to Dashboard',
+    backHome: 'Back to Home',
     
     // Footer
     rights: 'All rights reserved',
@@ -125,7 +124,7 @@ export const translations = {
   },
   ar: {
     // Header
-    logo: 'الصحة الذكية',
+    logo: 'الرؤية الطبية',
     forDoctors: 'للأطباء',
     login: 'تسجيل الدخول',
     logout: 'تسجيل الخروج',
@@ -154,8 +153,6 @@ export const translations = {
     chestXrayDesc: 'تحليل ذكي لصور الأشعة السينية للصدر',
     kidneyAnalysis: 'تحليل الأشعة المقطعية للكلى',
     kidneyAnalysisDesc: 'كشف حصوات الكلى بالذكاء الاصطناعي من الأشعة المقطعية',
-    clinicalChat: 'محادثة سريرية متقدمة',
-    clinicalChatDesc: 'استشارة طبية متخصصة',
     dermatology: 'تحليل الأمراض الجلدية',
     dermatologyDesc: 'تحليل حالات الجلد',
     ophthalmology: 'تحليل طب العيون',
@@ -219,6 +216,7 @@ export const translations = {
     
     // Navigation
     backDashboard: 'العودة إلى لوحة التحكم',
+    backHome: 'العودة إلى الصفحة الرئيسية',
     
     // Footer
     rights: 'جميع الحقوق محفوظة',

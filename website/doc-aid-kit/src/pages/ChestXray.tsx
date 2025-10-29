@@ -116,14 +116,6 @@ function ChestXrayContent() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <Alert>
-                  <AlertDescription>
-                    {language === 'ar'
-                      ? 'يستخدم هذا النظام خوارزمية HOG-SVM للكشف عن الالتهاب الرئوي من الأشعة السينية للصدر'
-                      : 'This system uses HOG-SVM algorithm to detect pneumonia from chest X-rays'}
-                  </AlertDescription>
-                </Alert>
-
                 <div className="space-y-4">
                   <div className="flex flex-col items-center justify-center border-2 border-dashed rounded-lg p-8 hover:border-primary/50 transition-colors">
                     <input

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MessageSquare, Pill, ShieldAlert, Stethoscope, Brain, Eye, Scan, Activity } from 'lucide-react';
+import { MessageSquare, Pill, ShieldAlert, Brain, Eye, Scan, Activity } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ToolCard } from '@/components/ToolCard';
@@ -20,7 +20,6 @@ const publicTools = [
 
 const doctorTools = [
   { icon: Scan, titleKey: 'chestXray', descKey: 'chestXrayDesc', route: '/chest-xray' },
-  { icon: Stethoscope, titleKey: 'clinicalChat', descKey: 'clinicalChatDesc', route: '/advanced-clinical-chat' },
   { icon: Activity, titleKey: 'dermatology', descKey: 'dermatologyDesc', route: '/dermatology' },
   { icon: Eye, titleKey: 'ophthalmology', descKey: 'ophthalmologyDesc', route: '/ophthalmology' },
   { icon: Brain, titleKey: 'neuro', descKey: 'neuroDesc', route: '/neuro' },

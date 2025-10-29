@@ -206,18 +206,12 @@ function KidneyAnalysisContent() {
                           <p className="text-sm text-muted-foreground mb-2">
                             {language === 'ar' ? 'التشخيص' : 'Diagnosis'}
                           </p>
-                          <p className={`text-3xl font-bold mb-3 ${hasStone ? 'text-orange-600' : 'text-green-600'}`}>
+                          <p className={`text-3xl font-bold ${hasStone ? 'text-orange-600' : 'text-green-600'}`}>
                             {hasStone 
                               ? (language === 'ar' ? 'حصوة كلوية' : 'Kidney Stone')
                               : (language === 'ar' ? 'طبيعي' : 'Normal')
                             }
                           </p>
-                          <div className="flex items-center justify-center gap-2 text-sm">
-                            <span className="text-muted-foreground">
-                              {language === 'ar' ? 'مستوى الثقة:' : 'Confidence:'}
-                            </span>
-                            <span className="font-semibold">{result.confidence}</span>
-                          </div>
                         </div>
 
                         <Alert className={hasStone ? 'border-orange-500 bg-orange-500/5' : 'border-green-500 bg-green-500/5'}>

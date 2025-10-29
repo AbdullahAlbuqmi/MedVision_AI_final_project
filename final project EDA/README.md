@@ -98,6 +98,25 @@ For technical issues with running the dashboard, ensure you have:
 - Modern web browser (Chrome, Firefox, Safari, or Edge)
 - Sufficient system resources
 
+## References:
+
+```bash
+References 
+1. Inadequate Radiological Interpretation
+•	Soudack, M., et al. "Who should be reading chest radiographs in the pediatric emergency department?" Pediatric Emergency Care, vol. 28, no. 6, 2012, pp. 539-542. DOI: 10.1097/PEC.0b013e31825a8c0a.
+________________________________________
+2. High Diagnostic Error Rates
+•	Liu, Y., et al. "Referral for ophthalmology evaluation and visual sequelae in children with brain tumors." Journal of Pediatric Ophthalmology and Strabismus, vol. 56, no. 6, 2019, pp. 368-373. DOI: 10.3928/01913913-20191111-01.
+________________________________________
+3. Knowledge Deficiencies in Primary Care
+•	Alotaibi, H. M., et al. "Assessment of primary care physicians' expertise in dermatology." Journal of Family Medicine and Community Health, vol. 10, no. 2, 2023, pp. 1-6. DOI: 10.15406/jfmch.2023.10.00372.
+________________________________________
+4. Technical Performance Gaps
+•	Kjelle, E., et al. "The assessment of image quality and diagnostic value in X-ray imaging." Insights into Imaging, vol. 13, no. 1, 2022, pp. 1-9. DOI: 10.1186/s13244-022-01169-9.
+________________________________________
+5. Medication Safety Concerns
+•	Aljadani, R., et al. "Prevalence of drug–drug interactions in geriatric patients at a tertiary care hospital." BMC Research Notes, vol. 11, no. 1, 2018, pp. 1-5. DOI: 10.1186/s13104-018-3342-5.
+```
 ---
 
 **Note**: This dashboard is for educational and research purposes, visualizing published medical study findings.

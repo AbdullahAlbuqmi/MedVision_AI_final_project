@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Moon, Sun, Globe, LogOut, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -65,9 +66,7 @@ export function Header() {
           tabIndex={0}
           onKeyDown={(e) => e.key === 'Enter' && handleLogoClick()}
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <span className="text-xl font-bold">H</span>
-          </div>
+          <img src={logo} alt="MedVision AI" className="h-14 w-14 object-contain" />
           <span className="text-xl font-bold text-primary">{t('logo', language)}</span>
         </div>
 

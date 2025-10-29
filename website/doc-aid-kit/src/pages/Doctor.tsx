@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MessageSquare, Pill, ShieldAlert, Stethoscope, Brain, Eye, Scan, Activity, Droplets } from 'lucide-react';
+import { MessageSquare, Pill, ShieldAlert, Brain, Eye, Scan, Activity, Droplets } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ToolCard } from '@/components/ToolCard';
@@ -13,7 +13,6 @@ const allTools = [
   { icon: ShieldAlert, titleKey: 'drugInteractions', descKey: 'drugInteractionsDesc', route: '/drug-interactions' },
   { icon: Scan, titleKey: 'chestXray', descKey: 'chestXrayDesc', route: '/chest-xray' },
   { icon: Droplets, titleKey: 'kidneyAnalysis', descKey: 'kidneyAnalysisDesc', route: '/kidney-analysis' },
-  { icon: Stethoscope, titleKey: 'clinicalChat', descKey: 'clinicalChatDesc', route: '/clinical-chat' },
   { icon: Activity, titleKey: 'dermatology', descKey: 'dermatologyDesc', route: '/dermatology' },
   { icon: Eye, titleKey: 'ophthalmology', descKey: 'ophthalmologyDesc', route: '/ophthalmology' },
   { icon: Brain, titleKey: 'brainAnalysis', descKey: 'brainAnalysisDesc', route: '/brain-analysis' },

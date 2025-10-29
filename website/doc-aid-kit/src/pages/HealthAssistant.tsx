@@ -2,22 +2,22 @@ import { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { AuthGuard } from '@/components/AuthGuard';
 import { BackLink } from '@/components/BackLink';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/components/ui/use-toast';
 import { getLanguage, t, type Language } from '@/lib/i18n';
+import { getSession } from '@/lib/auth';
 
 interface Message {
   role: 'user' | 'assistant';
   content: string;
 }
 
-function AdvancedClinicalChatContent() {
+export default function HealthAssistant() {
   const [language, setLanguage] = useState<Language>(getLanguage());
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -108,18 +108,24 @@ function AdvancedClinicalChatContent() {
     }
   };
 
+  const session = getSession();
+  const isLoggedIn = session !== null && session.role === 'doctor';
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       
       <main className="flex-1 container px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <BackLink />
+          <BackLink 
+            to={isLoggedIn ? '/doctor' : '/'}
+            labelKey={isLoggedIn ? 'backDashboard' : 'backHome'}
+          />
           <div className="mb-6">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h1 className="text-3xl font-bold mb-2">
-                  {language === 'ar' ? 'الدردشة السريرية المتقدمة' : 'Advanced Clinical Chat'}
+                  {language === 'ar' ? 'المساعد الصحي' : 'Health Assistant'}
                 </h1>
                 <p className="text-muted-foreground">
                   {language === 'ar' 
@@ -238,13 +244,5 @@ function AdvancedClinicalChatContent() {
 
       <Footer />
     </div>
-  );
-}
-
-export default function AdvancedClinicalChat() {
-  return (
-    <AuthGuard requiredRole="doctor">
-      <AdvancedClinicalChatContent />
-    </AuthGuard>
   );
 }
