@@ -47,7 +47,7 @@ Unlike traditional systems that offer static text results, this platform is **mo
 
 ---
 
-## Core Technological Innovations
+## Core Technological Solutions
 
 ### Dual AI Clinical Chatbot System
 - **DeepSeek 3.2v-685B**: Native Arabic & English understanding for complex clinical reasoning  
